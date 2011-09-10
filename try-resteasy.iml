@@ -13,10 +13,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.4" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxrs:2.1.0.GA_CP01" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.resteasy:jaxrs-api:2.1.0.GA_CP01" level="project" />
-    <orderEntry type="library" name="Maven: org.scannotation:scannotation:1.0.2" level="project" />
-    <orderEntry type="library" name="Maven: javassist:javassist:3.6.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxrs:2.2.1.GA" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.resteasy:jaxrs-api:2.2.1.GA" level="project" />
+    <orderEntry type="library" name="Maven: org.scannotation:scannotation:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
     <orderEntry type="library" name="Maven: javax.annotation:jsr250-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
@@ -25,12 +25,13 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: net.jcip:jcip-annotations:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxb-provider:2.1.0.GA_CP01" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.1.12" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxb-provider:2.2.1.GA" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.4" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.2.3" level="project" />
     <orderEntry type="library" name="Maven: javax.xml.stream:stax-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.stream:sjsxp:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.arquillian:arquillian-junit:1.0.0.Alpha4" level="project" />
   </component>
 </module>
 
