@@ -1,4 +1,4 @@
-package org.bluedash.resteasy.test.integration.test;
+package net.bluedash.resteasy.test.unit;
 
 import junit.framework.Assert;
 import org.jboss.resteasy.client.ClientRequest;
