@@ -2,8 +2,8 @@ package net.bluedash.resteasy.test.unit;
 
 
 import org.jboss.resteasy.plugins.server.tjws.TJWSEmbeddedJaxrsServer;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -18,17 +18,16 @@ public class TestTJWSEmbeddedJAXRSServer {
 
     private static TJWSEmbeddedJaxrsServer tjws;
 
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
         tjws = new TJWSEmbeddedJaxrsServer();
         tjws.setPort(8081);
-        tjws.getDeployment().getActualResourceClasses().add(HelloWorldService.class);
+        tjws.getDeployment().getActualResourceClasses().add(HelloWorldServiceImpl.class);
         tjws.start();
-
     }
 
-    @AfterClass
-    public static void tearDown() {
+    @After
+    public void tearDown() {
         tjws.stop();
     }
 

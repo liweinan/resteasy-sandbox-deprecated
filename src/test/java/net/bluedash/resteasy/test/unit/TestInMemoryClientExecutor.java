@@ -10,10 +10,10 @@ public class TestInMemoryClientExecutor {
     @Test
     public void testHelloWorld() {
         InMemoryClientExecutor executor = new InMemoryClientExecutor();
-        executor.getDispatcher().getRegistry().addPerRequestResource(HelloWorldService.class);
+        executor.getDispatcher().getRegistry().addPerRequestResource(HelloWorldServiceImpl.class);
         ClientRequest request = new ClientRequest("/helloworld", executor);
         try {
-            Assert.assertEquals(HelloWorldService.HELLO_WORLD, request.getTarget(String.class));
+            Assert.assertEquals(HelloWorldServiceImpl.HELLO_WORLD, request.getTarget(String.class));
         } catch (Exception e) {
             e.printStackTrace();
         }

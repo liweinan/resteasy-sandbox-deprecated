@@ -5,14 +5,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 @Path("/helloworld")
-public class HelloWorldService {
-
-    public static final String HELLO_WORLD = "Hello, world!";
+public interface HelloWorldService {
 
     @GET
     @Produces("text/plain")
-    public String printHelloWorld() {
-        return HELLO_WORLD;
-    }
+    public String printHelloWorld();
 }
 
