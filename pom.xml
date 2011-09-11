@@ -43,6 +43,13 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             <version>2.2.1.GA</version>
         </dependency>
         <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>tjws</artifactId>
+            <version>2.2.1.GA</version>
+			<scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.4</version>
