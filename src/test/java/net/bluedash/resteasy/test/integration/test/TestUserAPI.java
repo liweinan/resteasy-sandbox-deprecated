@@ -1,4 +1,4 @@
-package org.bluedash.resteasy.test.integration.test;
+package net.bluedash.resteasy.test.integration.test;
 
 import org.junit.Test;
 

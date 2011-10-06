@@ -1,4 +1,4 @@
-package org.bluedash.resteasy;
+package net.bluedash.resteasy;
 
 import java.net.URI;
 import java.util.Map;
