@@ -33,7 +33,4 @@ public class TestTJWSServletContainer {
         assertEquals("Hello, world!", client.printHelloWorld());
 
     }
-
-
-
 }

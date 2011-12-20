@@ -14,7 +14,7 @@ import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestTJWSEmbeddedJAXRSServer {
+public class TestTJWSEmbeddedJaxrsServer {
 
     private static TJWSEmbeddedJaxrsServer tjws;
 
