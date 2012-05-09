@@ -1,6 +1,7 @@
 package net.bluedash.resteasy.subresources;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 
 public class Customer {
@@ -15,14 +16,22 @@ public class Customer {
 	}
 
 	@GET
+    @PUT
 	public String get() {
 		return name;
 	}
 
 	@GET
+    @PUT
 	@Path("/address")
 	public String getAddress() {
 		return address;
 	}
+
+    @GET
+    @Path("/ggg")
+    private void ggg() {
+
+    }
 
 }

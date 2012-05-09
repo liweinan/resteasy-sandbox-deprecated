@@ -1,11 +1,10 @@
 package net.bluedash.resteasy;
 
-import java.util.HashSet;
-import java.util.Set;
+import net.bluedash.resteasy.subresources.ShoppingStore;
 
 import javax.ws.rs.core.Application;
-
-import net.bluedash.resteasy.subresources.ShoppingStore;
+import java.util.HashSet;
+import java.util.Set;
 
 public class BluedashResteasyApplication extends Application {
 	private Set<Object> singletons = new HashSet<Object>();

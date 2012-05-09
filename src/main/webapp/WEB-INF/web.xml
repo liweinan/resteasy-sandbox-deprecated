@@ -9,6 +9,7 @@
 	<context-param>
 		<param-name>javax.ws.rs.core.Application</param-name>
 		<param-value>net.bluedash.resteasy.BluedashResteasyApplication</param-value>
+        <!--<param-value></param-value>-->
 	</context-param>
 
 	<listener>
