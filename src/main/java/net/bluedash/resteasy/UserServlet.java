@@ -1,5 +1,7 @@
 package net.bluedash.resteasy;
 
+import com.restfully.shop.services.NotFoundException;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
@@ -11,16 +13,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UserServlet {
 
     private Map<Integer, UserType> userStore = new ConcurrentHashMap<Integer, UserType>();
-	private AtomicInteger idGenerator = new AtomicInteger();
+    private AtomicInteger idGenerator = new AtomicInteger();
 
     @POST
-	@Consumes("application/xml")
-	public Response createUser(UserType user) {
-		user.setId(idGenerator.incrementAndGet());
-		userStore.put(user.getId(), user);
-		System.out.println(user.getName() + " created: " + user.getId());
-		return Response.created(URI.create("/users/" + user.getId())).build();
-	}
+    @Consumes("application/xml")
+    public Response createUser(UserType user) {
+        user.setId(idGenerator.incrementAndGet());
+        userStore.put(user.getId(), user);
+        System.out.println(user.getName() + " created: " + user.getId());
+        return Response.created(URI.create("/users/" + user.getId())).build();
+    }
 
 //	@GET
 //	@Path("{id}")
@@ -43,6 +45,7 @@ public class UserServlet {
     @Path("/getstuff/{id}")
     public String getStuff(@PathParam("id") String id, String defg, String hijk) {
         System.out.println(id);
+        if (Integer.valueOf(id) > 100) throw new NotFoundException("Could not find customer " + id);
         return id;
     }
 
