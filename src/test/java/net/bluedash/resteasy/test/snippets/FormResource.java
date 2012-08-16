@@ -1,4 +1,4 @@
-package snippets;
+package net.bluedash.resteasy.test.snippets;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -18,6 +18,12 @@ public class FormResource {
     public String getDecodedFormParamGet(@FormParam("f") String formParam) {
         System.out.println("getDecodedFormParamGet(): decoded: " + formParam);
         return formParam;
+    }
+
+    @GET
+    @Path("exception")
+    public void throwException() throws IllegalArgumentException {
+        throw new IllegalArgumentException();
     }
 
 }

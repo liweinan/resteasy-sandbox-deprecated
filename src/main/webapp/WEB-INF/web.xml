@@ -10,11 +10,10 @@
         <param-value>net.bluedash.resteasy.BluedashResteasyApplication</param-value>
     </context-param>
 
-    <!--<context-param>-->
-        <!--<param-name>resteasy.scan.providers</param-name>-->
-        <!--<param-value>net.bluedash.resteasy.resteasy396.NotFoundExceptionMapper396396</param-value>-->
-    <!--</context-param>-->
-
+    <context-param>
+        <param-name>resteasy.scan.providers</param-name>
+        <param-value>net.bluedash.resteasy.IllegalArgumentExceptionMapper</param-value>
+    </context-param>
 
     <listener>
         <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>

@@ -11,19 +11,33 @@ http://maven.apache.org/maven-v4_0_0.xsd">
     <url>http://maven.apache.org</url>
     <properties>
         <arquillian.version>1.0.0.Alpha4</arquillian.version>
+        <resteasy.version>2.3.4.Final</resteasy.version>
     </properties>
     <repositories>
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-        </repository>
-        <repository>
-            <id>JBossMavenRepo</id>
-            <name>JBoss Maven2 repo</name>
+            <id>jboss-public-repository-group</id>
+            <name>Jboss Repository for Maven</name>
             <url>https://repository.jboss.org/nexus/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>java-net</id>
+            <name>Java.net Maven Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -33,17 +47,17 @@ http://maven.apache.org/maven-v4_0_0.xsd">
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>2.3.4.Final</version>
+            <version>${resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
-            <version>2.3.4.Final</version>
+            <version>${resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>tjws</artifactId>
-            <version>2.3.4.Final</version>
+            <version>${resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -59,7 +73,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-netty</artifactId>
-            <version>2.3.4.Final</version>
+            <version>${resteasy.version}</version>
         </dependency>
     </dependencies>
     <build>

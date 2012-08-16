@@ -1,4 +1,4 @@
-package resteasy734;
+package net.bluedash.resteasy.test.resteasy734;
 
 import org.jboss.resteasy.client.ProxyFactory;
 

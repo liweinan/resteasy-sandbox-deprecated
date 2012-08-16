@@ -1,4 +1,4 @@
-package resteasy737;
+package net.bluedash.resteasy.test.resteasy737;
 
 import javax.ws.rs.Encoded;
 import javax.ws.rs.GET;

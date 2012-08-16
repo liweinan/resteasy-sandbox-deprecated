@@ -1,4 +1,4 @@
-package resteasy737;
+package net.bluedash.resteasy.test.resteasy737;
 
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.plugins.server.netty.NettyJaxrsServer;
@@ -6,7 +6,7 @@ import org.jboss.resteasy.spi.ResteasyDeployment;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import resteasy734.HttpContextTest;
+import net.bluedash.resteasy.test.resteasy734.HttpContextTest;
 
 import javax.ws.rs.core.Response;
 

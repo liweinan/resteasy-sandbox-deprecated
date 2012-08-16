@@ -1,4 +1,4 @@
-package resteasy734;
+package net.bluedash.resteasy.test.resteasy734;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

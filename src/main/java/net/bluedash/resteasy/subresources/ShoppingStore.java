@@ -23,7 +23,7 @@ public class ShoppingStore {
 //        this.i = i;
 //    }
 
-    public ShoppingStore(@Context UriInfo ui,  @QueryParam("p") String str) {
+    public ShoppingStore(@Context UriInfo ui, @QueryParam("p") String str) {
         this.ui = ui;
         this.str = str;
 
@@ -40,17 +40,23 @@ public class ShoppingStore {
         return cust;
     }
 
-    @Path("/p1")
     @GET
-    private String privateMethod1() {
-        return "p1";
+    @Path("/exception")
+    public String throwException() throws IllegalArgumentException {
+        throw new IllegalArgumentException();
     }
 
-    @Path("/p2")
-    @GET
-    public String privateMethod2() {
-        return "p2";
-    }
+//    @Path("/p1")
+//    @GET
+//    private String privateMethod1() {
+//        return "p1";
+//    }
+//
+//    @Path("/p2")
+//    @GET
+//    public String privateMethod2() {
+//        return "p2";
+//    }
 
 }
 
