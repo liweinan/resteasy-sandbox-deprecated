@@ -36,7 +36,7 @@ public class SmokeTest {
 
     @Test
     public void test1() throws Exception {
-        Thread.sleep(10000000);
+//        Thread.sleep(10000000);
         ClientRequest request = new
                 ClientRequest("http://localhost:9090/RESTEASY-737/decoded/form?f=bee bop");
         ClientResponse<String> response = request.get(String.class);
@@ -48,6 +48,14 @@ public class SmokeTest {
     public void testException() throws Exception {
         ClientRequest request = new ClientRequest("http://localhost:9090/exception");
         ClientResponse response = request.get();
+        System.out.println(response.getStatus());
+    }
+
+    @Test
+    public void testJAXB() throws Exception {
+        ClientRequest request = new ClientRequest("http://localhost:9090/entry");
+        ClientResponse response = request.get();
+        System.out.println(response);
         System.out.println(response.getStatus());
     }
 }

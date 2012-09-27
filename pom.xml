@@ -75,6 +75,21 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             <artifactId>resteasy-netty</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.drools</groupId>-->
+            <!--<artifactId>guvnor</artifactId>-->
+            <!--<version>5.5.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>guvnor-webapp-core</artifactId>
+            <version>5.5.0-SNAPSHOT</version>
+        </dependency>
+       <dependency>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-api</artifactId>
+           <version>1.4.3</version>
+       </dependency>
     </dependencies>
     <build>
         <finalName>try-resteasy</finalName>

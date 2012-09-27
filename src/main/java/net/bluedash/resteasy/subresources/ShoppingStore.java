@@ -1,10 +1,10 @@
 package net.bluedash.resteasy.subresources;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
+import org.drools.guvnor.server.jaxrs.providers.atom.Entry;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
 @Path("/store")
@@ -57,6 +57,20 @@ public class ShoppingStore {
 //    public String privateMethod2() {
 //        return "p2";
 //    }
+
+    @POST
+    @Path("/entry")
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    public Entry createAssetFromAtom(Entry entry) {
+        try {
+            return entry;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new WebApplicationException(e);
+        }
+    }
+
 
 }
 
