@@ -1,8 +1,6 @@
 package net.bluedash.resteasy;
 
-import com.restfully.shop.services.CustomerResource;
-import net.bluedash.resteasy.resteasy396.NotFoundExceptionMapper396;
-import net.bluedash.resteasy.subresources.ShoppingStore;
+import net.bluedash.resteasy.sandbox.CachedResource;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -13,12 +11,7 @@ public class BluedashResteasyApplication extends Application {
     private Set<Class<?>> classes = new HashSet<Class<?>>();
 
     public BluedashResteasyApplication() {
-        classes.add(ShoppingStore.class);
-        singletons.add(new UserServlet());
-        singletons.add(new CustomerResource());
-
-//        classes.add(NotFoundExceptionMapper.class);
-        classes.add(NotFoundExceptionMapper396.class);
+        classes.add(CachedResource.class);
     }
 
     @Override
