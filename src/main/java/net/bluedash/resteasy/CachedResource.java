@@ -1,4 +1,4 @@
-package net.bluedash.resteasy.sandbox;
+package net.bluedash.resteasy;
 
 import org.jboss.resteasy.annotations.GZIP;
 

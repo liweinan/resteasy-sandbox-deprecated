@@ -1,7 +1,5 @@
 package net.bluedash.resteasy;
 
-import net.bluedash.resteasy.sandbox.CachedResource;
-
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
