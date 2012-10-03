@@ -35,8 +35,7 @@ public class CachedResource {
         String content = reader.readLine();
         reader.close();
 
-        System.out.println("###ETag: " + servletRequest.getHeader("ETag"));
-        System.out.println("###Content hash: " + Math.abs(content.hashCode()));
+        System.out.println("***Content hash: " + Math.abs(content.hashCode()));
         EntityTag tag = new EntityTag(Integer.toString(Math.abs(content.hashCode())));
 
         Response.ResponseBuilder builder = request.evaluatePreconditions(lastModified, tag);
