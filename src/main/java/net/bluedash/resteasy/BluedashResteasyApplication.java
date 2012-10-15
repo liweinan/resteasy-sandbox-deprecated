@@ -9,7 +9,7 @@ public class BluedashResteasyApplication extends Application {
     private Set<Class<?>> classes = new HashSet<Class<?>>();
 
     public BluedashResteasyApplication() {
-        classes.add(CachedResource.class);
+        classes.add(EntryResource.class);
     }
 
     @Override
