@@ -11,7 +11,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
     <url>http://maven.apache.org</url>
     <properties>
         <arquillian.version>1.0.0.Alpha4</arquillian.version>
-        <resteasy.version>2.3.5.Final</resteasy.version>
+        <resteasy.version>3.0-alpha-1-SNAPSHOT</resteasy.version>
     </properties>
     <repositories>
         <repository>

@@ -11,11 +11,6 @@
     </context-param>
 
     <context-param>
-        <param-name>resteasy.scan.providers</param-name>
-        <param-value>net.bluedash.resteasy.IllegalArgumentExceptionMapper</param-value>
-    </context-param>
-
-    <context-param>
    		<param-name>resteasy.servlet.mapping.prefix</param-name>
    		<param-value>/resteasy</param-value>
    	</context-param>
