@@ -11,7 +11,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
     <url>http://maven.apache.org</url>
     <properties>
         <arquillian.version>1.0.0.Alpha4</arquillian.version>
-        <resteasy.version>3.0-alpha-1-SNAPSHOT</resteasy.version>
+        <resteasy.version>2.3.4.Final</resteasy.version>
     </properties>
     <repositories>
         <repository>
@@ -51,34 +51,13 @@ http://maven.apache.org/maven-v4_0_0.xsd">
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jsapi</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>tjws</artifactId>
             <version>${resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.arquillian</groupId>
-            <artifactId>arquillian-junit</artifactId>
-            <version>${arquillian.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-netty</artifactId>
-            <version>${resteasy.version}</version>
         </dependency>
     </dependencies>
     <build>
