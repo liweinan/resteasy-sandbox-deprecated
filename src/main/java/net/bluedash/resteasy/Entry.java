@@ -334,40 +334,39 @@ public class Entry extends CommonAttributes
     * @return null if there is no XML content
     * @throws JAXBException
     */
-   public <T> T getAnyOtherJAXBObject(Class<T> clazz, Class... otherPossibleClasses) throws JAXBException
-   {
-      JAXBContext ctx = null;
-      Class[] classes = {clazz};
-      if (otherPossibleClasses != null && otherPossibleClasses.length > 0)
-      {
-         classes = new Class[1 + otherPossibleClasses.length];
-         classes[0] = clazz;
-         for (int i = 0; i < otherPossibleClasses.length; i++) classes[i + 1] = otherPossibleClasses[i];
-      }
-      if (finder != null)
-      {
-         ctx = finder.findCacheContext(MediaType.APPLICATION_XML_TYPE, null, classes);
-      }
-      else
-      {
-         ctx = JAXBContext.newInstance(classes);
-      }
-      if (getAnyOtherElement() == null) return null;
-      Object obj = ctx.createUnmarshaller().unmarshal(getAnyOtherElement());
-      if (obj instanceof JAXBElement)
-      {
-         anyOtherJaxbObject = ((JAXBElement) obj).getValue();
-         return (T) anyOtherJaxbObject;
-      }
-      else
-      {
-          anyOtherJaxbObject = obj;
-         return (T) obj;
-      }
+   public <T> T getAnyOtherJAXBObject(Class<T> clazz, Class... otherPossibleClasses) throws JAXBException {
+       JAXBContext ctx = null;
+       Class[] classes = {clazz};
+       if (otherPossibleClasses != null && otherPossibleClasses.length > 0) {
+           classes = new Class[1 + otherPossibleClasses.length];
+           classes[0] = clazz;
+           for (int i = 0; i < otherPossibleClasses.length; i++) classes[i + 1] = otherPossibleClasses[i];
+       }
+       if (finder != null) {
+           ctx = finder.findCacheContext(MediaType.APPLICATION_XML_TYPE, null, classes);
+       } else {
+           ctx = JAXBContext.newInstance(classes);
+       }
+       if (getAnyOther().size() == 0) return null;
+
+       Object obj = null;
+
+       if (getAnyOtherElement() != null) {
+           ctx.createUnmarshaller().unmarshal(getAnyOtherElement());
+       } else {
+           obj = getAnyOther().get(0);
+       }
+
+       if (obj instanceof JAXBElement) {
+           anyOtherJaxbObject = ((JAXBElement) obj).getValue();
+           return (T) anyOtherJaxbObject;
+       } else {
+           anyOtherJaxbObject = obj;
+           return (T) obj;
+       }
    }
 
-
-   /**
+    /**
     * Returns previous extracted jaxbobject from a call to getJAXBObject(Class<T> clazz)
     * or value passed in through a previous setJAXBObject().
     *
