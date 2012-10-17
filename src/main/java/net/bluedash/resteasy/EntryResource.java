@@ -98,5 +98,23 @@ public class EntryResource {
 
 
     }
+
+
+    @POST
+    @Path("entry5")
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    public AtomAssetMetadata createAssetFromAtom5(Entry entry) {
+        try {
+            String[] categories = null;
+            AtomAssetMetadata assetMetadata = entry.getAnyOtherJAXBObject(AtomAssetMetadata.class);
+            categories = assetMetadata.getCategories();
+            System.out.println(categories);
+            return assetMetadata;
+        } catch (Exception e) {
+            throw new WebApplicationException(e);
+        }
+    }
+
 }
 
