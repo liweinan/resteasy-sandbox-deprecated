@@ -125,6 +125,7 @@ public class EntryResource {
 
     @POST
     @Path("entry6")
+    @GuvnorDecorators
     @Consumes(MediaType.APPLICATION_ATOM_XML)
     @Produces(MediaType.APPLICATION_ATOM_XML)
     public Entry createAssetFromAtom6(Entry entry, @Context UriInfo uriInfo) {
