@@ -15,7 +15,8 @@ import java.io.StringBufferInputStream;
 public class TestJAXB {
 
     public static void main(String[] args) throws Exception {
-        Class[] classes = new Class[]{AtomAssetMetadata.class, Entry.class};
+//        Class[] classes = new Class[]{AtomAssetMetadata.class, Entry.class};
+        Class[] classes = new Class[]{Entry.class};
         JAXBContext jaxbContext = JAXBContext.newInstance(classes);
 
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();

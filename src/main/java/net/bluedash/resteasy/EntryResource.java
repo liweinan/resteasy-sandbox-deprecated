@@ -3,10 +3,15 @@ package net.bluedash.resteasy;
 import xyz.org.AtomAssetMetadata;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.UriInfo;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.StringBufferInputStream;
+import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 
@@ -101,7 +106,6 @@ public class EntryResource {
 
     }
 
-
     @POST
     @Path("entry5")
     @Consumes(MediaType.APPLICATION_ATOM_XML)
@@ -118,6 +122,60 @@ public class EntryResource {
             throw new WebApplicationException(e);
         }
     }
+
+    @POST
+    @Path("entry6")
+    @Consumes(MediaType.APPLICATION_ATOM_XML)
+    @Produces(MediaType.APPLICATION_ATOM_XML)
+    public Entry createAssetFromAtom6(Entry entry, @Context UriInfo uriInfo) {
+        try {
+            String[] categories = null;
+            AtomAssetMetadata assetMetadata = entry.getAnyOtherJAXBObject(AtomAssetMetadata.class);
+            categories = assetMetadata.getCategories();
+            System.out.println(assetMetadata);
+            System.out.println(categories);
+            Entry returnEntry = toAssetEntryAbdera(uriInfo);
+            return returnEntry;
+        } catch (Exception e) {
+            throw new WebApplicationException(e);
+        }
+    }
+
+    public Entry toAssetEntryAbdera(UriInfo uriInfo) throws Exception {
+        URI baseUri;
+        baseUri = uriInfo.getBaseUriBuilder()
+                .path("packages/{packageName}/assets/{assetName}")
+                .build("testpackageName", "testassetName");
+
+
+        Entry e = new Entry();
+        e.setTitle("testtitle");
+        e.setSummary("testdesc");
+        e.setPublished(new Date());
+        e.setBase(baseUri);
+        e.getAuthors().add(new Person("testperson"));
+
+        e.setId(baseUri);
+
+        AtomAssetMetadata atomAssetMetadata = e.getAnyOtherJAXBObject(AtomAssetMetadata.class);
+        if (atomAssetMetadata == null) {
+            atomAssetMetadata = new AtomAssetMetadata();
+        }
+        atomAssetMetadata.setArchived(false);
+        atomAssetMetadata.setUuid("testuuid");
+
+        e.setAnyOtherJAXBObject(atomAssetMetadata);
+
+        Content content = new Content();
+        content.setSrc(UriBuilder.fromUri(baseUri).path("binary").build());
+        content.setType(MediaType.APPLICATION_OCTET_STREAM_TYPE);
+//        content.setContentType(Type.MEDIA); // TODO remove me if not it's base64 encoded fine
+//        content.setJAXBObject(atomAssetMetadata);
+        e.setContent(content);
+
+        return e;
+    }
+
 
 }
 
