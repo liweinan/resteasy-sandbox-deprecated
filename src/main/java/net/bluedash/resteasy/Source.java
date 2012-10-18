@@ -50,7 +50,7 @@ import java.util.List;
  *     }
  * <p/>
  *  The atom:source element is designed to allow the aggregation of
- *  entries from different feeds while retaining information about an
+ *  paramTypes from different feeds while retaining information about an
  *  entry's source feed.  For this reason, Atom Processors that are
  *  performing such aggregation SHOULD include at least the required
  *  feed-level Metadata elements (atom:id, atom:title, and atom:updated)

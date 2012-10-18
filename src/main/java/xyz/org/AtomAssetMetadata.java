@@ -1,10 +1,13 @@
-package net.bluedash.resteasy;
+package xyz.org;
 
 /**
  * 10 16 2012
  *
  * @author <a href="mailto:l.weinan@gmail.com">Weinan Li</a>
  */
+
+import net.bluedash.resteasy.Archived;
+import net.bluedash.resteasy.*;
 
 import javax.xml.bind.annotation.*;
 import java.util.Date;

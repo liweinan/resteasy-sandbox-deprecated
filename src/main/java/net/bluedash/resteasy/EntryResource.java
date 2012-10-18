@@ -1,5 +1,7 @@
 package net.bluedash.resteasy;
 
+import xyz.org.AtomAssetMetadata;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBContext;
@@ -102,13 +104,14 @@ public class EntryResource {
 
     @POST
     @Path("entry5")
-    @Consumes(MediaType.APPLICATION_XML)
-    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_ATOM_XML)
+    @Produces(MediaType.APPLICATION_ATOM_XML)
     public AtomAssetMetadata createAssetFromAtom5(Entry entry) {
         try {
             String[] categories = null;
             AtomAssetMetadata assetMetadata = entry.getAnyOtherJAXBObject(AtomAssetMetadata.class);
             categories = assetMetadata.getCategories();
+            System.out.println(assetMetadata);
             System.out.println(categories);
             return assetMetadata;
         } catch (Exception e) {

@@ -1,7 +1,7 @@
 package net.bluedash.resteasy.test;
 
-import net.bluedash.resteasy.AtomAssetMetadata;
 import net.bluedash.resteasy.Entry;
+import xyz.org.AtomAssetMetadata;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
