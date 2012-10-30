@@ -1,19 +1,14 @@
 package net.bluedash.resteasy.jackson;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  * 10 30 2012
  *
  * @author <a href="mailto:l.weinan@gmail.com">Weinan Li</a>
  */
-@XmlRootElement
-public class XmlResource {
+public class XmlResourceWithoutJAXB {
     String attr1;
     String attr2;
 
-    @XmlElement(name = "attr_1")
     public String getAttr1() {
         return attr1;
     }
@@ -22,7 +17,6 @@ public class XmlResource {
         this.attr1 = attr1;
     }
 
-    @XmlElement
     public String getAttr2() {
         return attr2;
     }

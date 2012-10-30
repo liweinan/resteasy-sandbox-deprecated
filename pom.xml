@@ -51,6 +51,11 @@
             <artifactId>jackson-jaxrs</artifactId>
             <version>1.9.9</version>
         </dependency>
+        <dependency>
+          <groupId>com.fasterxml.jackson.module</groupId>
+          <artifactId>jackson-module-jaxb-annotations</artifactId>
+          <version>2.0.5</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>try-resteasy</finalName>
