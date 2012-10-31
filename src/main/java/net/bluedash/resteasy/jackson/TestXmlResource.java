@@ -45,6 +45,7 @@ public class TestXmlResource {
             System.out.print(outputStream.toString());
         }
 
+
         XmlResourceWithoutJAXB resourceWithoutJAXB = new XmlResourceWithoutJAXB();
         resourceWithoutJAXB.setAttr1("XXX");
         resourceWithoutJAXB.setAttr2("YYY");
