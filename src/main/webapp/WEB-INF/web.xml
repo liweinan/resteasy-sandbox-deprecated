@@ -7,7 +7,7 @@
 
     <context-param>
         <param-name>javax.ws.rs.core.Application</param-name>
-        <param-value>net.bluedash.resteasy.BluedashResteasyApplication</param-value>
+        <param-value>net.bluedash.resteasy.BluedashApplication</param-value>
     </context-param>
 
     <context-param>
@@ -24,15 +24,15 @@
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
     </servlet>
 
-    <!--<servlet>-->
-        <!--<servlet-name>RESTEasy JSAPI</servlet-name>-->
-        <!--<servlet-class>org.jboss.resteasy.jsapi.JSAPIServlet</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>RESTEasy JSAPI</servlet-name>
+        <servlet-class>org.jboss.resteasy.jsapi.JSAPIServlet</servlet-class>
+    </servlet>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>RESTEasy JSAPI</servlet-name>-->
-        <!--<url-pattern>/rest-js</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>RESTEasy JSAPI</servlet-name>
+        <url-pattern>/rest-js</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>Resteasy</servlet-name>
