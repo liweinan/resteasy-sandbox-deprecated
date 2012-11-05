@@ -15,12 +15,12 @@
 <script type="text/javascript">
     function testAdd() {
         document.getElementById('add_result').innerHTML =
-                AddImpl.operate({operand1:1, operand2:1});
+                Add.operate({operand1:1, operand2:1});
     }
 
     function testMinus() {
         document.getElementById('minus_result').innerHTML =
-                MinusImpl.operate({operand1:1, operand2:1});
+                Minus.operate({operand1:1, operand2:1});
     }
 </script>
 </body>
