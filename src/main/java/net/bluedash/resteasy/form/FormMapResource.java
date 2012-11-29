@@ -19,6 +19,13 @@ public class FormMapResource {
         return myForm.getMyMap().toString();
     }
 
+//    weli@power:~$ http -f POST http://127.0.0.1:8080/try-resteasy/resteasy/form/map myMap[A]=1
+//    HTTP/1.1 200 OK
+//    Content-Length: 43
+//    Content-Type: */*
+//    Server: Jetty(6.1.15)
+//
+//    {A=net.bluedash.resteasy.form.Foo@49020230}
     @GET
     public String get() {
         return "ok";
