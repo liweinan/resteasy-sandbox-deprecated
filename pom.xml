@@ -68,6 +68,11 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 			<artifactId>servlet-api</artifactId>
 			<version>2.4</version>
 		</dependency>
+        <dependency>
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+        	<version>1.2.17</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<finalName>try-resteasy</finalName>
