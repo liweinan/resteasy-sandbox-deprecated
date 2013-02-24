@@ -1,11 +1,11 @@
-package net.bluedash.resteasy;
+package io.resteasy;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import net.bluedash.resteasy.json.JsonResource;
+import io.resteasy.json.JsonResource;
 
 /**
  * @author <a href="mailto:l.weinan@gmail.com">Weinan Li</a>

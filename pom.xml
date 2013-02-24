@@ -2,15 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.bluedash</groupId>
-	<artifactId>try-resteasy</artifactId>
+	<groupId>io</groupId>
+	<artifactId>resteasy-sandbox</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>try-resteasy Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<name>RESTEasy Sandbox</name>
+	<url>https://github.com/liweinan/resteasy-sandbox</url>
 	<properties>
 		<arquillian.version>1.0.0.Alpha4</arquillian.version>
-		<resteasy.version>2.3.5.Final</resteasy.version>
+		<resteasy.version>3.0-beta-2</resteasy.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -43,7 +43,12 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 			<artifactId>junit</artifactId>
 			<version>4.4</version>
 		</dependency>
-		<dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-client</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>${resteasy.version}</version>
@@ -58,16 +63,21 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 			<!--<artifactId>resteasy-jackson-provider</artifactId>-->
 			<!--<version>${resteasy.version}</version>-->
 		<!--</dependency>-->
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-atom-provider</artifactId>
-			<version>${resteasy.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.jboss.resteasy</groupId>-->
+			<!--<artifactId>resteasy-atom-provider</artifactId>-->
+			<!--<version>${resteasy.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-netty</artifactId>
 			<version>${resteasy.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>tjws</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>

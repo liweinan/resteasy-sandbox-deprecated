@@ -7,7 +7,7 @@
 
     <context-param>
         <param-name>javax.ws.rs.core.Application</param-name>
-        <param-value>net.bluedash.resteasy.BluedashApplication</param-value>
+        <param-value>io.resteasy.BluedashApplication</param-value>
     </context-param>
 
     <context-param>
@@ -18,7 +18,7 @@
     <context-param>
         <param-name>resteasy.providers</param-name>
         <param-value>
-            net.bluedash.resteasy.json.JsonObjectArrayMarshaller,net.bluedash.resteasy.json.JsonObjectArrayUnmarshaller
+            io.resteasy.json.JsonObjectArrayMarshaller,io.resteasy.json.JsonObjectArrayUnmarshaller
         </param-value>
     </context-param>
 

@@ -1,4 +1,4 @@
-package net.bluedash.resteasy.json;
+package io.resteasy.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

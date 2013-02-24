@@ -1,4 +1,4 @@
-package net.bluedash.resteasy.json;
+package io.resteasy.json;
 
 public class JsonObject {
 

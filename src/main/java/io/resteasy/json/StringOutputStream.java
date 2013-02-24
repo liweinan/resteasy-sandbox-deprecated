@@ -1,4 +1,4 @@
-package net.bluedash.resteasy.json;
+package io.resteasy.json;
 
 import java.io.IOException;
 import java.io.OutputStream;

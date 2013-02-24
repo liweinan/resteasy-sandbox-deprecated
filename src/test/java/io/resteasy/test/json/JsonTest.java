@@ -1,4 +1,4 @@
-package net.bluedash.resteasy.test;
+package io.resteasy.test.json;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 
 import junit.framework.Assert;
-import net.bluedash.resteasy.json.JsonObject;
-import net.bluedash.resteasy.json.JsonObjectArrayMarshaller;
-import net.bluedash.resteasy.json.JsonObjectArrayUnmarshaller;
+import io.resteasy.json.JsonObject;
+import io.resteasy.json.JsonObjectArrayMarshaller;
+import io.resteasy.json.JsonObjectArrayUnmarshaller;
 
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
@@ -23,9 +23,9 @@ public class JsonTest {
 	@Test
 	public void testHello() throws Exception {
 		ClientRequest request = new ClientRequest(
-				"http://localhost:8088/try-resteasy/resteasy/json/hello");
+				"http://localhost:8088/resteasy-sandbox/resteasy/json/hello");
 		ClientResponse<String> response = request.get();
-		Assert.assertEquals(response.getStatus(), 200);
+		Assert.assertEquals(200, response.getStatus());
 		String resp = response.getEntity(String.class);
 		Assert.assertEquals("hello", resp);
 	}
@@ -33,7 +33,7 @@ public class JsonTest {
 	@Test
 	public void testList() throws Exception {
 		ClientRequest clientRequest = new ClientRequest(
-				"http://localhost:8088/try-resteasy/resteasy/json/list");
+				"http://localhost:8088/resteasy-sandbox/resteasy/json/list");
 		clientRequest.accept(MediaType.APPLICATION_JSON);
 
 		List<JsonObject> reqObj = new ArrayList<JsonObject>();
@@ -43,8 +43,8 @@ public class JsonTest {
         reqObj.add(jsonObj);
 
 		clientRequest.body(MediaType.APPLICATION_JSON, reqObj);
-		clientRequest.getProviderFactory().addMessageBodyReader(JsonObjectArrayUnmarshaller.class);
-		clientRequest.getProviderFactory().addMessageBodyWriter(JsonObjectArrayMarshaller.class);
+        clientRequest.getProviderFactory().register(JsonObjectArrayUnmarshaller.class);
+        clientRequest.getProviderFactory().register(JsonObjectArrayMarshaller.class);
 		
 		ClientResponse response = clientRequest.post();
 		List resp = (List) response.getEntity(new GenericType<List<JsonObject>>() {});
