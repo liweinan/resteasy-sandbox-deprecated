@@ -1,4 +1,4 @@
-package io.resteasy.test.json;
+package io.resteasy.test.integration.json;
 
 import java.util.ArrayList;
 import java.util.List;

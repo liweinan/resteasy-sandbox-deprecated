@@ -147,7 +147,6 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<stopKey>foo</stopKey>
 					<stopPort>9999</stopPort>
-
 				</configuration>
 				<executions>
 					<execution>
