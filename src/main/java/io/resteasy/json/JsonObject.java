@@ -1,5 +1,8 @@
 package io.resteasy.json;
 
+import org.jboss.resteasy.annotations.providers.NoJackson;
+
+@NoJackson
 public class JsonObject {
 
 	private String key;

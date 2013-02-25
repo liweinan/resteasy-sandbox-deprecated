@@ -18,7 +18,7 @@
     <context-param>
         <param-name>resteasy.providers</param-name>
         <param-value>
-            io.resteasy.json.JsonObjectArrayMarshaller,io.resteasy.json.JsonObjectArrayUnmarshaller
+            io.resteasy.json.JsonObjectMarshaller,io.resteasy.json.JsonObjectUnmarshaller
         </param-value>
     </context-param>
 

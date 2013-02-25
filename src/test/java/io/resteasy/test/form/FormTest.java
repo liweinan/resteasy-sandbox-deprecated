@@ -66,8 +66,6 @@ public class FormTest extends BaseResourceTest {
     @Test
     public void fluent() throws Exception {
         ResteasyClient client = new ResteasyClientBuilder().build();
-
-
         ResteasyWebTarget target = client.target("http://localhost:8081/form/multipart");
         Form form = new Form().param("param1", "value1")
                 .param("param2", "value2");

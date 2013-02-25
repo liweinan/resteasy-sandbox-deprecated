@@ -21,11 +21,13 @@ import javax.ws.rs.ext.Provider;
 // resteasy-jackson-provider must be excluded from dependency for this to work
 @Provider
 @Consumes(MediaType.APPLICATION_JSON)
-public class JsonObjectArrayUnmarshaller implements MessageBodyReader {
+public class JsonObjectUnmarshaller implements MessageBodyReader {
 
     @Override
     public boolean isReadable(Class type, Type genericType,
                               Annotation[] annotations, MediaType mediayType) {
+        if (type.equals(JsonObject.class))
+            return true;
         for (Class intf : type.getInterfaces()) {
             if (Collection.class.isAssignableFrom(intf)) {
                 return true;
@@ -40,9 +42,16 @@ public class JsonObjectArrayUnmarshaller implements MessageBodyReader {
                            MultivaluedMap httpHeaders, InputStream in) throws IOException,
             WebApplicationException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(in,
-                new TypeReference<List<JsonObject>>() {
-                });
+        if (type.equals(JsonObject.class)) {
+
+            return mapper.readValue(in,
+                    new TypeReference<JsonObject>() {
+                    });
+        } else {
+            return mapper.readValue(in,
+                    new TypeReference<List<JsonObject>>() {
+                    });
+        }
     }
 
 }

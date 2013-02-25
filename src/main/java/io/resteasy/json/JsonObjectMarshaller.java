@@ -17,10 +17,9 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 
 
-// resteasy-jackson-provider must be excluded from dependency for this to work
 @Provider
 @Produces(MediaType.APPLICATION_JSON)
-public class JsonObjectArrayMarshaller implements MessageBodyWriter {
+public class JsonObjectMarshaller implements MessageBodyWriter {
 
     @Override
     public long getSize(Object target, Class type, Type genericType,
@@ -31,6 +30,10 @@ public class JsonObjectArrayMarshaller implements MessageBodyWriter {
     @Override
     public boolean isWriteable(Class clazz, Type type,
                                Annotation[] annotations, MediaType mediaType) {
+        System.out.println("CUSTOMIZED-JSON-WRITER-TRIGGERED");
+
+        if (clazz.equals(JsonObject.class))
+            return true;
         for (Class intf : clazz.getInterfaces()) {
             if (Collection.class.isAssignableFrom(intf)) {
                 return true;
